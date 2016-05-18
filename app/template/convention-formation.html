@@ -1,0 +1,34 @@
+<div>
+  <div><label>N° contrat</label><input [(ngModel)]="trainingContract.record"></div>
+  <h3>Entreprise</h3>
+  <div><label>nom</label><input [(ngModel)]="company.name"></div>
+  <div><label>adresse</label><input [(ngModel)]="company.address"></div>
+  <div><label>ville</label><input [(ngModel)]="company.city"></div>
+  <div><label>code postal</label><input [(ngModel)]="company.zipCode"></div>
+  <div><label>téléphone</label><input [(ngModel)]="company.phoneNumber"></div>
+  <div><label>SIRET</label><input [(ngModel)]="company.SIRET"></div>
+  <div><label>NAF</label><input [(ngModel)]="company.NAF"></div>
+  <div><label>email</label><input [(ngModel)]="company.email"></div>
+  <div><label>représentant</label><input [(ngModel)]="company.representative"></div>
+</div>
+
+<div>
+CONVENTION DE FORMATION
+</div>
+<div>
+N° {{ trainingContract.record }}
+</div>
+<div>
+La présente convention règle les rapports de l’Entreprise
+<div>
+ENTREPRISE
+<p>{{ company.name }}</p>
+<p>{{ company.address }}</p>
+<p>{{ company.city }}</p>
+<p>{{ company.zipCode }}</p>
+<p>Tél : {{ company.phoneNumber }}</p>
+<p>N° de Siret : {{ company.SIRET }}</p>
+<p>Code NAF : {{ company.NAF }}</p>
+<p>Email : {{ company.email }}</p>
+<p>Représenté par {{ company.representative }}</p>
+</div>
