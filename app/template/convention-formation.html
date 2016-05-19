@@ -1,4 +1,6 @@
-<div>
+<link rel="stylesheet" href="../../styles.css">
+<header class="logo"><img src="../assets/logo.png"></header>
+<!-- <div>
   <div><label>N° contrat</label><input [(ngModel)]="trainingContract.record"></div>
   <h3>Entreprise</h3>
   <div><label>nom</label><input [(ngModel)]="company.name"></div>
@@ -10,25 +12,202 @@
   <div><label>NAF</label><input [(ngModel)]="company.NAF"></div>
   <div><label>email</label><input [(ngModel)]="company.email"></div>
   <div><label>représentant</label><input [(ngModel)]="company.representative"></div>
-</div>
+</div> -->
+<div id="contract">
+  <div id="title">
+    <h1>CONVENTION DE FORMATION</h1>
+    <p id="record">N° {{ trainingContract.record }}</p>
+  </div>
+  <div class="page">
+    <p>La présente convention règle les rapports de l’Entreprise</p>
+    <div>
+      <h2>{{ company.name }}</h2>
+      <p>{{ company.address }}</p>
+      <p>{{ company.zipCode }} {{ company.city }}</p>
+      <p>Tél : {{ company.phoneNumber }}</p>
+      <p>N° de Siret : {{ company.SIRET }}</p>
+      <p>Code NAF : {{ company.NAF }}</p>
+      <p>Email : {{ company.email }}</p>
+      <p>Représenté par {{ company.representative }}</p>
+    </div>
+    <p class="delim"><b>Et</b></p>
+    <div>
+      <h2>ITECHSUP</h2>
+      <p>Parc Héliopolis</p>
+      <p>1101, avenue Jacques Cartier</p>
+      <p>44800 Saint Herblain</p>
+      <p>Tél : 02.51.89.01.69</p>
+      <p>N° de Siret : 42 639 848 00047</p>
+      <p>Code NAF : 8559A</p>
+      <p>Email : direction@itechsup.fr</p>
+      <p>Représenté par Ludovic Hervé</p>
+    </div>
+    <p class="delim"><b>Et</b></p>
+    <div>
+      <h2>{{ trainee.title }}</h2>
+      <p>{{ trainee.address }}</p>
+      <p>{{ trainee.zipCode }} {{ trainee.city }}</p>
+      <p>Tél. Portable : {{ trainee.mobileNumber }</p>
+      <p>Tél. Fixe : {{ trainee.landlineNumber }}</p>
+      <p>Email : {{ trainee.email }}</p>
+    </div>
+    <div class="pageFooter">
+      <p>Siège social : Parc Héliopolis  1 101, avenue Jacques Cartier   44 800 Saint Herblain – www.ItechSup.fr</p>
+      <p>« Déclaration d’activité enregistrée  sous le numéro 52 44 07188 44 auprès du préfet de Région de Pays de la Loire »</p>
+      <p>Code NAF : 8559A.  N° RCS 792 116 105  Tél : 02 51 89 01 69 </p>
+      <p>administration@itechsup.fr  </p>
+    </div>
+  </div>
+  <div class="page">
+    <p>Il a été convenu ce qui suit :</p>
 
-<div>
-CONVENTION DE FORMATION
+    <h1>I – CLAUSES GENERALES, DUREE DE LA FORMATION, QUALIFICATION DE LA FORMATION.</h1>
+
+    <h2>Article 1 : Clauses Générales.</h2>
+    <p>La présente convention est régie par les prescriptions législatives et réglementaires en vigueur et en particulier, celles applicables aux formations professionnelles en alternance (Livre III, Titre II, Chapitre V du Code du Travail). La durée de travail hebdomadaire inclut le temps de formation. La durée du travail et son organisation  se doivent d’être en conformité avec la convention collective en vigueur dans l’entreprise.</p>
+
+    <h2>Article 2 : Durée de la formation.</h2>
+    <p>La présente convention a une durée de {{ trainingContract.getNumberOfMonths() }} mois. Elle débute le {{ trainingContract.startDate }} et prendra fin le
+    {{ trainingContract.endDate }}.</p>
+
+    <h2>Article 3 : Qualification de la formation du stagiaire.</h2>
+    <p><b>Formation :</b> {{ trainingContract.trainingName }}</p>
+
+    <p><b>Niveau obtenu par le candidat en fin de formation :</b> {{ trainingContract.trainingLevel }}</p>
+
+    <div class="pageFooter">
+      <p>Siège social : Parc Héliopolis  1 101, avenue Jacques Cartier   44 800 Saint Herblain – www.ItechSup.fr</p>
+      <p>« Déclaration d’activité enregistrée  sous le numéro 52 44 07188 44 auprès du préfet de Région de Pays de la Loire »</p>
+      <p>Code NAF : 8559A.  N° RCS 792 116 105  Tél : 02 51 89 01 69 </p>
+      <p>administration@itechsup.fr  </p>
+    </div>
+
+    <h1>II – CARACTERISTIQUES GENERALES DE LA FORMATION</h1>
+    <h2>Article 4 : Organisation de la formation.</h2>
+    <p>La formation générale d’une durée de {{ trainingContract.numberOfHour}} heures sera dispensée par ITECHSUP.</p>
+
+    <h2>Article 5 : Matières étudiées.</h2>
+    </p>Les matières étudiées sont conformes au programme (voir plan de formation).Les modalités d’enseignement de ces matières (cours, travaux pratiques ou dirigés, séminaires, etc.…) restent à la convenance du centre de formation.<p>
+    <p>Les conditions générales dans lesquelles la formation est dispensée, notamment les moyens pédagogiques et techniques sont les suivants :
+      <ul>
+        <li>Salles de cours,</li>
+        <li>Station de travail,</li>
+        <li>
+          Formateurs permanents et vacataires
+          <table>
+            <thead>
+              <tr>
+                <th>Domaine de qualification et d'intervention</th>
+                <th>Formateur</th>
+                <th>Statut</th>
+                <th>Diplôme</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Marketing, gestion de projet</td>
+                <td>Ludovic HERVE</td>
+                <td>Responsable pédagogique</td>
+                <td>Titre Responsable de Dispositif de formation (CAFOC)</td>
+              </tr>
+              <tr>
+                <td>Informatique</td>
+                <td>Jean François JUNG</td>
+                <td>Formateur</td>
+                <td>Titre de Développeur Logiciel</td>
+              </tr>
+              <tr>
+                <td>Informatique</td>
+                <td>Bruno BEAUDRON</td>
+                <td>Formateur</td>
+                <td>Titre Chef de Projet en Conception de Système Informatique </td>
+              </tr>
+              <tr>
+                <td>Gestion</td>
+                <td>Anne Marie FERNANDEZ</td>
+                <td>Formatrice</td>
+                <td>Titre Responsable de Formation pour Adultes</td>
+              </tr>
+              <tr>
+                <td>Anglais</td>
+                <td>Rénata REITER</td>
+                <td>Formatrice</td>
+                <td>Maitrise anglais</td>
+              </tr>
+              <tr>
+                <td>Droit</td>
+                <td>Audrey ROBIN</td>
+                <td>Formatrice </td>
+                <td>Certificat d'aptitude à la formation d'avocat</td>
+              </tr>
+              <tr>
+                <td>Gestion, Eco, Droit, RH</td>
+                <td>Christian TRICOIRE</td>
+                <td>Formateur</td>
+                <td>DESS Gestion</td>
+              </tr>
+              <tr>
+                <td>Commerce / Vente</td>
+                <td>Sophie BEAUGENDRE</td>
+                <td>Formatrice</td>
+                <td>Titre Professionnel de Formateur pour Adultes</td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </p>
+  </p>
+
+  <div class="pageFooter">
+    <p>Siège social : Parc Héliopolis  1 101, avenue Jacques Cartier   44 800 Saint Herblain – www.ItechSup.fr</p>
+    <p>« Déclaration d’activité enregistrée  sous le numéro 52 44 07188 44 auprès du préfet de Région de Pays de la Loire »</p>
+    <p>Code NAF : 8559A.  N° RCS 792 116 105  Tél : 02 51 89 01 69 </p>
+    <p>administration@itechsup.fr  </p>
+  </div>
 </div>
-<div>
-N° {{ trainingContract.record }}
-</div>
-<div>
-La présente convention règle les rapports de l’Entreprise
-<div>
-ENTREPRISE
-<p>{{ company.name }}</p>
-<p>{{ company.address }}</p>
-<p>{{ company.city }}</p>
-<p>{{ company.zipCode }}</p>
-<p>Tél : {{ company.phoneNumber }}</p>
-<p>N° de Siret : {{ company.SIRET }}</p>
-<p>Code NAF : {{ company.NAF }}</p>
-<p>Email : {{ company.email }}</p>
-<p>Représenté par {{ company.representative }}</p>
+<div class="page">
+  <h1>III – INSERTION DU  STAGIAIRE DANS L’ENTREPRISE D’ACCUEIL.</h1>
+  <h2>Article 7 : Le tuteur</h2>
+  <p>Nom du tuteur : {{ trainingContract.tutorName }} </p>
+  <p>Fonction du tuteur : {{ trainingContract.tutorPosition }} </p>
+  <h2>Article 8 : Engagements de l’employeur</h2>
+  <p>L’employeur susvisé s’engage à :</p>
+  <ul>
+    <li>Faire suivre au stagiaire tous les enseignements et toutes les activités pédagogiques dispensées par ITECHSUP dans le cadre de sa formation.</li>
+    <li>Assurer au stagiaire une formation méthodique conduisant à la qualification prévue au présent contrat.</li>
+    <li>Assurer ou faire assurer dans l’entreprise la formation pratique du stagiaire en lui confiant notamment des tâches de travail permettant l’exécution des opérations ou des travaux faisant l’objet de la progression arrêtée d’un commun accord entre ITECHSUP et le(s) représentant(s) de l’entreprise.</li>
+    <li>Effectuer dès l’entrée du stagiaire dans l’entreprise les déclarations obligatoires pour que celui-ci bénéficie des lois sociales en vigueur.</li>
+    <li>Respecter les règles propres au contrat de travail à durée déterminée, notamment délai prévu par l’article L.122.3BI et II du Code du Travail.</li>
+    <li>Informer La Direction Départementale du Travail et de l’Emploi en cas de rupture anticipée du contrat.</li>
+    <li>Positionner les jours de congés du stagiaire sur des périodes où il n’y a pas de cours au centre de formation. Dans le cas contraire, le stagiaire devra récupérer les heures de formation où il aura été absent sur le temps prévu en entreprise.</li>
+  </ul>
+  <h2>Article 9 : Dispositions financières</h2>
+  <p>ITECHSUP engage pour la durée de la formation des frais de réalisation incompressibles. Toute heure de formation prestée sera facturée.</p>
+  <p>L’entreprise (ou l’OPCA) s’engage à régler à ITECHSUP toute facture dès réception.</p>
+  <p>En cas de défaillance de la part du centre de formation, les heures non prestées ne seront pas facturées. En cas d’absence injustifiée du fait du stagiaire ou de l’entreprise, toute heure de formation prestée sera facturée directement à l’entreprise (et non à l’OPCA).</p>
+  <p>ITECHSUP se réserve le droit de mettre un terme immédiat à l’action de formation pour non-respect de modalité de paiement, manquement au règlement et au bon déroulement de la formation.</p>
+  <h2>Article 10 : Engagement du Centre de Formation ITECHSUP.</h2>
+  <p>ITECHSUP s’engage à former le stagiaire pour la formation prévue.</p>
+  <h2>Article 11 : Engagement du stagiaire.</h2>
+  <p>Le stagiaire affirme être libre de tout engagement et s’engage à suivre avec assiduité les enseignements dispensés par ITECHSUP et dans l’entreprise, à exécuter les tâches prévues au présent contrat.</p>
+  <div id="signing">
+    <p>Fait à :</p>
+    <p>Le </p>
+    <table>
+      <tr>
+        <td>Le centre de formation représenté par :</td>
+        <td>L'oragnisme d'accueil représenté par :</td>
+        <td>Le stagiaire <i>(faire précéder de la mention lu et approuvé)</i></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="pageFooter">
+    <p>Siège social : Parc Héliopolis  1 101, avenue Jacques Cartier   44 800 Saint Herblain – www.ItechSup.fr</p>
+    <p>« Déclaration d’activité enregistrée  sous le numéro 52 44 07188 44 auprès du préfet de Région de Pays de la Loire »</p>
+    <p>Code NAF : 8559A.  N° RCS 792 116 105  Tél : 02 51 89 01 69 </p>
+    <p>administration@itechsup.fr  </p>
+  </div>
+
 </div>
