@@ -3,14 +3,14 @@ export class TrainingContract {
     public record: string = null,
     public trainingName: string = null,
     public trainingLevel: string = null,
-    public numberOfHour: number = null,
+    public numberOfHours: number = null,
     public tutorName: string = null,
     public tutorPosition: string = null,
     public startDate: Date = null,
     public endDate: Date = null) {
   }
 
-  numberOfMonth() {
+  get numberOfMonths(): number {
     var months;
     months = (this.endDate.getFullYear() - this.startDate.getFullYear()) * 12;
     months -= this.endDate.getMonth();

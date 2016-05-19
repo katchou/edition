@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../../styles.css">
-<header class="logo"><img src="../assets/logo.png"></header>
+<header class="logo"><img src="../../assets/logo.png"></header>
 <!-- <div>
   <div><label>N° contrat</label><input [(ngModel)]="trainingContract.record"></div>
   <h3>Entreprise</h3>
@@ -44,7 +44,7 @@
     </div>
     <p class="delim"><b>Et</b></p>
     <div>
-      <h2>{{ trainee.title }}</h2>
+      <h2>{{ trainee.title }} {{ trainee.name }}</h2>
       <p>{{ trainee.address }}</p>
       <p>{{ trainee.zipCode }} {{ trainee.city }}</p>
       <p>Tél. Portable : {{ trainee.mobileNumber }</p>
@@ -67,7 +67,7 @@
     <p>La présente convention est régie par les prescriptions législatives et réglementaires en vigueur et en particulier, celles applicables aux formations professionnelles en alternance (Livre III, Titre II, Chapitre V du Code du Travail). La durée de travail hebdomadaire inclut le temps de formation. La durée du travail et son organisation  se doivent d’être en conformité avec la convention collective en vigueur dans l’entreprise.</p>
 
     <h2>Article 2 : Durée de la formation.</h2>
-    <p>La présente convention a une durée de {{ trainingContract.getNumberOfMonths() }} mois. Elle débute le {{ trainingContract.startDate }} et prendra fin le
+    <p>La présente convention a une durée de {{ trainingContract.getNumberOfMonths }} mois. Elle débute le {{ trainingContract.startDate }} et prendra fin le
     {{ trainingContract.endDate }}.</p>
 
     <h2>Article 3 : Qualification de la formation du stagiaire.</h2>
@@ -84,10 +84,10 @@
 
     <h1>II – CARACTERISTIQUES GENERALES DE LA FORMATION</h1>
     <h2>Article 4 : Organisation de la formation.</h2>
-    <p>La formation générale d’une durée de {{ trainingContract.numberOfHour}} heures sera dispensée par ITECHSUP.</p>
+    <p>La formation générale d’une durée de {{ trainingContract.numberOfHours}} heures sera dispensée par ITECHSUP.</p>
 
     <h2>Article 5 : Matières étudiées.</h2>
-    </p>Les matières étudiées sont conformes au programme (voir plan de formation).Les modalités d’enseignement de ces matières (cours, travaux pratiques ou dirigés, séminaires, etc.…) restent à la convenance du centre de formation.<p>
+    <p>Les matières étudiées sont conformes au programme (voir plan de formation).Les modalités d’enseignement de ces matières (cours, travaux pratiques ou dirigés, séminaires, etc.…) restent à la convenance du centre de formation.<p>
     <p>Les conditions générales dans lesquelles la formation est dispensée, notamment les moyens pédagogiques et techniques sont les suivants :
       <ul>
         <li>Salles de cours,</li>
@@ -156,8 +156,7 @@
           </table>
         </li>
       </ul>
-    </p>
-  </p>
+
 
   <div class="pageFooter">
     <p>Siège social : Parc Héliopolis  1 101, avenue Jacques Cartier   44 800 Saint Herblain – www.ItechSup.fr</p>
