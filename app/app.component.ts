@@ -6,6 +6,10 @@ import { TraineeComponent } from './component/trainee.component';
 
 import { CompanyComponent } from './component/company.component';
 
+import { ContractComponent } from './component/contract.component';
+
+import {ConventionFormationComponent} from './component/convention-formation.component';
+
 // import { TrainingContract } from './model/TrainingContract';
 //
 // import { Company } from './model/Company';
@@ -19,14 +23,19 @@ import { CompanyComponent } from './component/company.component';
     <div class="row">
       <div class="col-xs-4"><trainee-form></trainee-form></div>
       <div class="col-xs-4"><company-form></company-form></div>
-      <div class="col-xs-4">variable-metasyntaxique-2</div>
+      <div class="col-xs-4"><contract-form></contract-form></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12"><convention-formation></convention-formation></div>
     </div>
   </div>
 
   `,
   directives: [
     TraineeComponent,
-    CompanyComponent
+    CompanyComponent,
+    ContractComponent,
+    ConventionFormationComponent
   ]
 })
 
