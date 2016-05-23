@@ -11,8 +11,4 @@ export class TraineeComponent {
   model = new Trainee();
   submitted = false;
   onSubmit() { this.submitted = true; }
-
-  get diagnostic() {
-    return JSON.stringify(this.model);
-  }
 }

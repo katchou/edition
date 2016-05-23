@@ -5,8 +5,8 @@ export class Trainee {
     public address: string = null,
     public city: string = null,
     public zipCode: string = null,
-    public mobileNumber: string = null,
-    public landlineNumber: string = null,
+    public mobile: string = null,
+    public landliner: string = null,
     public email: string = null) {
   }
 }

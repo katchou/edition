@@ -25,9 +25,6 @@ import {ConventionFormationComponent} from './component/convention-formation.com
       <div class="col-xs-4"><company-form></company-form></div>
       <div class="col-xs-4"><contract-form></contract-form></div>
     </div>
-    <div class="row">
-      <div class="col-xs-12"><convention-formation></convention-formation></div>
-    </div>
   </div>
 
   `,
