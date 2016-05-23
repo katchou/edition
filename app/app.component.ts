@@ -1,42 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { NgForm } from '@angular/common';
 
-import { TraineeComponent } from './component/trainee.component';
+import { ContractEditorComponent } from './component/contract-editor.component';
 
-import { CompanyComponent } from './component/company.component';
+import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { ContractComponent } from './component/contract.component';
+import { ConventionFormationComponent } from './component/convention-formation.component';
 
-import {ConventionFormationComponent} from './component/convention-formation.component';
+import { Company } from './model/Company';
 
-// import { TrainingContract } from './model/TrainingContract';
-//
-// import { Company } from './model/Company';
-//
-// import { Trainee } from './model/Trainee';
+import { ContractService } from './services/contract.service'
 
 @Component({
   selector: 'my-app',
   template: `
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-4"><trainee-form></trainee-form></div>
-      <div class="col-xs-4"><company-form></company-form></div>
-      <div class="col-xs-4"><contract-form></contract-form></div>
-    </div>
-  </div>
-
+  <nav>
+    <a [routerLink]="['/contrat']" >Saisie des infos</a>
+    <a [routerLink]="['/convention-formation']" target="_blank">Convention de formation</a>
+  </nav>
+  <router-outlet></router-outlet>
   `,
   directives: [
-    TraineeComponent,
-    CompanyComponent,
-    ContractComponent,
-    ConventionFormationComponent
-  ]
+    ContractEditorComponent,
+    ROUTER_DIRECTIVES
+  ],
+  providers: [ ContractService ]
 })
 
-export class AppComponent {
+@Routes([
+  {path: '/convention-formation', component: ConventionFormationComponent },
+  {path: '/contrat', component: ContractEditorComponent}
+])
+
+export class AppComponent implements OnInit {
+  constructor(private router: Router, private contractService: ContractService) {}
+  ngOnInit() {
+    this.router.navigate(['contrat'])
+  }
+  company: Company = new Company();
   // trainingContract: TrainingContract = new TrainingContract();
   // company: Company = new Company();
   // trainee: Trainee = new Trainee();

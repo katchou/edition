@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { Company } from '../model/Company';
 
@@ -8,7 +8,9 @@ import { Company } from '../model/Company';
 })
 
 export class CompanyComponent {
-  model = new Company();
+  @Input()
+  company: Company;
+
   submitted = false;
   onSubmit() { this.submitted = true; }
 }
